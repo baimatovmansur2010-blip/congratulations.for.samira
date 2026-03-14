@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Для тебя 💖</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <div class="progress-dots" id="progressDots"></div>
+
+    <div class="screen welcome-screen active" id="screen0">
+      <div class="welcome-icon">💌</div>
+      <h1 class="welcome-title">Привет, любимая</h1>
+      <p class="welcome-sub">Я сделал это специально для тебя</p>
+      <p class="welcome-hint">✨ Пройди мини-игру и открой свои сюрпризы ✨</p>
+      <button class="btn-primary" onclick="goTo(1)">НАЧАТЬ →</button>
+    </div>
+
+    <div class="screen" id="screen1">
+      <div class="screen-icon">💝</div>
+      <h2 class="screen-title">Почему я тебя люблю</h2>
+      <p class="screen-sub">Нажми на каждую причину 👇</p>
+      <div class="reasons-list" id="reasonsList"></div>
+      <p class="hint-text" id="reasonsHint">Открой хотя бы 3 причины 🌸</p>
+      <button
+        class="btn-primary"
+        id="reasonsNextBtn"
+        style="display: none"
+        onclick="goTo(2)"
+      >
+        Дальше →
+      </button>
+    </div>
+
+    <div class="screen" id="screen2">
+      <div class="screen-icon">🎮</div>
+      <h2 class="screen-title">Мини-игра</h2>
+      <p class="screen-sub">Собери 150 очков чтобы открыть сюрприз!</p>
+      <div class="score-badge" id="scoreBadge">⭐ 0 / 150</div>
+      <div class="game-board" id="gameBoard"></div>
+      <div class="win-block" id="winBlock" style="display: none">
+        <p class="win-text">🎉 Ты выиграла!</p>
+        <button class="btn-primary" onclick="goTo(3)">
+          Открыть сюрприз 🎁
+        </button>
+      </div>
+    </div>
+
+    <div class="screen" id="screen3">
+      <div class="screen-icon">📷</div>
+      <h2 class="screen-title">Наши воспоминания</h2>
+      <p class="screen-sub">💕</p>
+      <div class="gallery-grid" id="galleryGrid"></div>
+      <button class="btn-primary" onclick="goTo(4)">Дальше →</button>
+    </div>
+    <div
+      class="modal-overlay"
+      id="photoModal"
+      style="display: none"
+      onclick="closeModal()"
+    >
+      <div class="modal-content">
+        <div class="modal-emoji" id="modalEmoji"></div>
+        <p class="modal-label" id="modalLabel"></p>
+        <p class="modal-hint">Нажми чтобы закрыть</p>
+      </div>
+    </div>
+
+    <div class="screen" id="screen4">
+      <div id="confettiContainer"></div>
+      <div class="final-heart">💖</div>
+      <h1 class="final-title">Месяц пролетел как один день.<br />Спасибо тебе за эти счастливые 30 дней!</h1>
+      <div class="final-card">
+        <p class="final-quote">
+          "Ты — моя самая любимая. Спасибо, что ты есть. Я люблю
+          тебя больше всего на свете. 🌹"
+        </p>
+      </div>
+      <p class="final-sign">— Только твой 💕</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
